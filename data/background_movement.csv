@@ -8,7 +8,6 @@ ward_2,ward_4,10
 ward_2,ward_5,30
 ward_3,ward_1,50
 ward_3,ward_2,30
-ward_3,ward_3,20
 ward_3,ward_4,70
 ward_3,ward_5,90
 ward_4,ward_1,10
@@ -32,7 +31,6 @@ ward_9,ward_3,23
 ward_9,ward_10,7
 ward_9,ward_11,21
 ward_10,ward_9,24
-ward_10,ward_10,50
 ward_10,ward_12,38
 ward_11,ward_9,41
 ward_12,ward_11,7

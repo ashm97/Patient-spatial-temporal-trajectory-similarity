@@ -98,7 +98,7 @@ visNetwork(nodes = netDat$nodes,edges = netDat$edges,
 
 <div id="ref-brockmann_2013">
 
-Brockmann, Dirk, and Dirk Helbing. 2013. “The hidden geometry of complex, network-driven contagion phenomena.” science 342.6164 (2013): 1337-1342. https://science.sciencemag.org/content/342/6164/1337
+Brockmann, Dirk, and Helbing, Dirk. 2013. “The hidden geometry of complex, network-driven contagion phenomena.” science 342.6164 (2013): 1337-1342. https://science.sciencemag.org/content/342/6164/1337
 
 </div>
 
@@ -106,6 +106,6 @@ Brockmann, Dirk, and Dirk Helbing. 2013. “The hidden geometry of complex, netw
 
 <div id="ref-myall_2020">
 
-Myall, A.C., Peach, R.L., Weiße, A.Y., Davies, F., Mookerjee, S., Holmes, A. and Barahona, M., 2020. Network memory in the movement of hospital patients carrying drug-resistant bacteria. arXiv preprint arXiv:2009.14480. https://arxiv.org/abs/2009.14480v2
+Myall, Ashleigh C., Robert L. Peach, Andrea Y. Weiße, Frances Davies, Siddharth Mookerjee, Alison Holmes, and Mauricio Barahona. 2020. Network memory in the movement of hospital patients carrying drug-resistant bacteria. arXiv preprint arXiv:2009.14480. https://arxiv.org/abs/2009.14480v2
 
 </div>

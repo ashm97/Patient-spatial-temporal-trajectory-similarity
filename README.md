@@ -8,7 +8,7 @@ We introduce a novel contact model which recovers undetected transmission of hea
   <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/fig_intro_missing_data.png" width="600">
 </p>
 
-*Traditional contact tracing based on direct contact, a widely used tool in disease outbreak investigations, can be hampered by missing data. Both non-observable contacts between infected patients, or unknown infected patients serving as links between infected patients can result in misleading and limited results. Moreover, transmission facilitated through environmental surfaces, or by staff can all form an abundance of indirect and non-observable links.*
+<sub>*Traditional contact tracing based on direct contact, a widely used tool in disease outbreak investigations, can be hampered by missing data. Both non-observable contacts between infected patients, or unknown infected patients serving as links between infected patients can result in misleading and limited results. Moreover, transmission facilitated through environmental surfaces, or by staff can all form an abundance of indirect and non-observable links.*</sub>
 
 Here, we propose a graph-based model to mitigate these problems by measuring proximity between network-constrained temporal trajectories across background movement patterns. Our model naturally captures already known, but also missed contact likely to have resulted in transmission. 
 

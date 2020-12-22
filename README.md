@@ -36,7 +36,7 @@ trajectories = example_trajectories()
 traj.l <- split(trajectories , f = trajectories$patient.ID)
 ```
 
-Routes of disease spread are often dominated by a set of most probable trajectories. These probable trajectories can be found by computing a matrix `D` which contains the lengths of shortest paths from nodes v_i -> v_j in terms of effective distance. Here we can call the function `eff_dist` which computes matrix `D` when provided a dataframe containing the weighted directed edges of background mobility patterns.
+Routes of disease spread are often dominated by a set of most probable trajectories. These probable trajectories can be found by computing a matrix `D` which contains the lengths of shortest paths from nodes v_i -> v_j in terms of effective distance (Brockmann and Helbing 2013). Here we can call the function `eff_dist()` which computes matrix `D` when provided a dataframe containing the weighted directed edges of background mobility patterns.
 
 ```R
 D = eff_dist(read_csv("data/background_movement.csv")) 
@@ -46,7 +46,7 @@ The dataset `data/background_movement.csv` is a simple example with 12 locations
 
 ### Visualising trajectories
 
-We provide a function `plot_trajectories` to visualise the time that `trajectories` were recorded in `data/background_movement.csv`.
+We provide a function `plot_trajectories()` to visualise the time that `trajectories` were recorded in `data/background_movement.csv`.
 
 ```R
 plot_trajectories(traj.l)
@@ -56,7 +56,7 @@ plot_trajectories(traj.l)
 
 ### Computing proximity between trajectories
 
-The function `getSpatialTempProx` computes total spatial temporal proximities using our kernal function and returns a weighted undirected dataframe of `edges`. For every pair of patients, we define spatio-temporal proximity between ward-time locations $l_{i}$ and $l_{j}$ with the kernel:
+The function `getSpatialTempProx()` computes total spatial temporal proximities using our kernal function and returns a weighted undirected dataframe of `edges`. For every pair of patients, we define spatio-temporal proximity between ward-time locations $l_{i}$ and $l_{j}$ with the kernel:
 
 \kappa(l_{i},l_{j})  = e^{-\delta_{ij}-\beta \tau_{ij}},
 
@@ -94,3 +94,20 @@ visNetwork(nodes = netDat$nodes,edges = netDat$edges,
 ```
 
 ## References
+
+<div id="refs" class="references">
+
+<div id="ref-allaire_rmarkdown:_2016">
+
+Allaire, J. J., Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang,
+Jeff Allen, Hadley Wickham, and Rob Hyndman. 2016. *Rmarkdown: Dynamic
+Documents for R* (version 1.3).
+<https://cran.r-project.org/web/packages/rmarkdown/index.html>.
+
+</div>
+
+<div id="ref-brockmann_2013">
+
+Brockmann, Dirk, and Dirk Helbing. 2013. “The hidden geometry of complex, network-driven contagion phenomena.” science 342.6164 (2013): 1337-1342.
+
+</div>

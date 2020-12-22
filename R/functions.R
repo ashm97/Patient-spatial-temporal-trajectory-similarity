@@ -130,8 +130,8 @@ plot_trajectories = function(traj.l){
 #' Return shortest paths between locations in terms of effective distance given 
 #' a background movement. Effective distance (as described in https://science.sciencemag.org/content/342/6164/1337),
 #' 
-#' Routes of disease spread are often dominated by a set of most probable trajectories. 
-#' These probable trajectories can be derived using the effective distance given a
+  #' Routes of disease spread are often dominated by a set of most probable trajectories. 
+  #' These probable trajectories can be derived using the effective distance given a
 #' flux connectivity matrix $P$ from a systems mobility patterns. In $P$, elements 
 #' $P_{ij}$ confer to the fraction of departing individuals leaving node (representing 
 #' hospital wards in this study) $v_i$ and arriving at node $v_j$, such that $1 < P_{ij} \leq  1$. 
@@ -199,7 +199,7 @@ eff_dist = function(edges){
 #' represents a propagation speed, and $\delta_{ij}$ denotes the shortest-path 
 #' distance (the most probable pathway for disease propagation) between wards 
 #' $v_i$ and $v_j$ across the background movement network $G$. 
-#' Note equation~\ref{eqn:space_time_prox_kernal} reaches a maximum of one when 
+#' Note the equation reaches a maximum of one when 
 #' $l_{ia} = l_{jb}$ (exact overlaps), and decays to zero as spatial-temporal 
 #' proximity becomes more distant. We then measure overall similarity between 
 #' trajectories $T_m$ and $T_n$ by summing over pairwise proximity measures 
@@ -297,7 +297,7 @@ comp_dist =  function(traj_a,traj_b,D){
 getSpatialTempProx = function(traj.l,D,beta=0.6){
   
   # User update
-  print("Computing distances")
+  print("Computing proximities")
   
   # Set all combinations of patient trajectories - duplicated combinations should not be included here
   combs = combinations(n=length(names(traj.l)),r=2,v=names(traj.l),repeats.allowed=F)
@@ -355,12 +355,12 @@ getSpatialTempProx = function(traj.l,D,beta=0.6){
 
 #' Implementation of of Continuous k-Nearest Neighbors (CKNN) in R
 #'
-#' See https://arxiv.org/pdf/1606.02353.pdf. CKNN connect points x,y 
-#' 
-#' if d(x,y) < lambda * ( d(x,x_k) * d(y,y_k) )^0.5
-#' 
-#' Where d(x,y) is the distance between points x and y. And x_k, and y_k, are the 
-#' k-th closest neighbors of points x and y respectively.
+  #' See https://arxiv.org/pdf/1606.02353.pdf. CKNN connect points x,y 
+  #' 
+  #' if d(x,y) < lambda * ( d(x,x_k) * d(y,y_k) )^0.5
+  #' 
+  #' Where d(x,y) is the distance between points x and y. And x_k, and y_k, are the 
+  #' k-th closest neighbors of points x and y respectively.
 #' 
 #' @param k integer: number of neighbors
 #' @param lambda double: positive parameter regulating density.
@@ -441,7 +441,8 @@ cknneighbors_graph = function(k = 2,lambda = 1,edges){
 
 preproNet = function(trajectories,edges){
   nodes =  data.frame("id" = 1:length(unique(trajectories$patient.ID)),
-                      "label" = unique(trajectories$patient.ID))
+                      "label" = unique(trajectories$patient.ID),
+                      "group" = "B")
   
   edges.net = left_join(left_join(edges,nodes[,1:2],by= c("source" = "label")),
                         nodes[,1:2],by= c("target" = "label"))

@@ -4,13 +4,13 @@
 
 We introduce a novel contact model which recovers undetected transmission of healthcare-associated infections (HAIs). Outbreaks of HAIs are both burdensome and extremely common. Contact tracing based on direct contacts is often used in outbreaks HAIs to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
 
-![alt text](https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/blob/main/images/fig_intro_missing_data.png) 
+![alt text](https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/fig_intro_missing_data.png) 
 
 *The limitations missing data presents for outbreak investigations. Traditional contact tracing based on direct contact, a widely used tool in disease outbreak investigations, can be hampered by missing data. Both non-observable contacts between infected patients, or unknown infected patients serving as links between infected patients can result in misleading and limited results. Moreover, transmission facilitated through environmental surfaces, or by staff can all form an abundance of indirect and non-observable links.*
 
 Here, we propose a graph-based model to mitigate these problems by measuring proximity between network-constrained temporal trajectories across background movement patterns. Our model naturally captures already known, but also missed contact likely to have resulted in transmission. 
 
-![alt text](https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/blob/main/images/methodology_explained.png) 
+![alt text](https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/methodology_explained.png) 
 
 *Model overview. Firstly, patient movement histories are captured as a set of network trajectories $\begin{Bmatrix} T_1,T_2,T_3,...,T_N \end{Bmatrix}$ passing through nodes of a background movement graph $D$ (Panel A). Typically, only direct contact is considered when determine transmission from infected patient movement, however, this inherently missed indirect contact which can also be a source of disease transmission. Our model recovers both indirect and direct contact by measuring points between trajectories in terms of the spatial proximity $\delta_{ij}$ (network-wise) and temporal proximity $\tau_{ij}$ (Panel B). This spatial-temporal proximity allows us to quantifies how close patients have into a mathematical object (a patient trajectory similarity matrix) $S$ (Panel C). Given disease portability of disease transmission increases the longer patients coincide, we recover the contact leading to transmission by forming a contact graph $\hat{S}$ by looking for strongest contact patterns (weighted by proximity) in $S$ (Panel D).*
 
@@ -35,7 +35,7 @@ D = eff_dist(read_csv("data/background_movement.csv"))
 
 The dataset `data/background_movement.csv` is a simple example with 12 locations (wards) which the subsequent `trajectories` are recorded over:
 
-![alt text](https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/blob/main/images/background_movement_example.png) 
+![alt text](https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/background_movement_example.png) 
 
 
 The function `example_trajectories()` generates a long dataframe with 12 pre-set trajectories. Each trajectory is a series of locations (rows in the dataframe) with both a location (ward or network nove v_i) and a time component. For later computation, we also split the `trajectories` dataframe into a list of dataframes `traj.l` based on the `trajectories$patient.ID` column.

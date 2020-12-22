@@ -103,7 +103,7 @@ visNetwork(nodes = netDat$nodes,edges = netDat$edges,
   visOptions(highlightNearest = TRUE)
 ```
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/contact_network_vis.png" width="400">
+  <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/contact_network_vis.png" width="600">
 </p>
 
 
@@ -117,16 +117,16 @@ Brockmann, Dirk, and Helbing, Dirk. 2013. “The hidden geometry of complex, net
 
 </div>
 
-</div>
 
 <div id="ref-myall_2020">
+  
 Myall, Ashleigh C and Peach, Robert L and Weiße, Andrea Y and Davies, Frances and Mookerjee, Siddharth and Holmes, Alison and Barahona, Mauricio. 2020. Network memory in the movement of hospital patients carrying drug-resistant bacteria. arXiv preprint. https://arxiv.org/abs/2009.14480v2
 
 </div>
 
-</div>
 
 <div id="ref-myall_2020">
+  
 Berry, Tyrus, and Timothy Sauer. 2016. Consistent manifold representation for topological data analysis. Foundations of Data Science. http://aimsciences.org//article/id/2556e6c9-b4b9-455a-9d9e-886ef0cd166f
 
 </div>

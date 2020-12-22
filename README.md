@@ -54,16 +54,6 @@ trajectories = example_trajectories()
 traj.l <- split(trajectories , f = trajectories$patient.ID)
 ```
 
-### Visualising trajectories
-
-We provide a function `plot_trajectories()` to visualise the time that `trajectories` were recorded in `data/background_movement.csv`.
-
-```R
-plot_trajectories(traj.l)
-```
-
-*Trajectory summary. Each row refers to one individual (patient), and x-axis records time. The line plot shows the beggining of each trajectory (green marker), and the finishing time (red marker).*
-
 ### Computing proximity between trajectories
 
 The function `getSpatialTempProx()` computes total spatial temporal proximities using our kernal function and returns a weighted undirected dataframe of `edges`. For every pair of patients, we define spatio-temporal proximity between ward-time locations $l_{i}$ and $l_{j}$ with the kernel:

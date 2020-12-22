@@ -1,6 +1,6 @@
 # Revealing missed transmission in hospital outbreaks of disease with a novel contact recovery mode
 
-## Overview
+## Paper overview
 
 We introduce a novel contact model which recovers undetected transmission of healthcare-associated infections (HAIs). Outbreaks of HAIs are both burdensome and extremely common. Contact tracing based on direct contacts is often used in outbreaks HAIs to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
 
@@ -19,7 +19,15 @@ In our preprint (link) we showcased our models ability to capture transmission r
 If used please cite: *preprint link*
 
 
+## Repo overview
+
+This repo provides an implementable example of the model proposed in ref. 
+
 ### Example data
+
+There are 2 datasets required for our indirect contact model. Firstly are the trajectories of infected individuals under investigation. Secondly, the background mobility patterns over which indirect contact is measured. 
+
+The function `example_trajectories()` generates a long dataframe with 12 pre-set trajectories. Each trajectory is a series of locations (rows in the dataframe) with both a location (ward) and a time component (the day when the individual was on that ward). For later computation, we also split the `trajectories` dataframe into a list of dataframes `traj.l` based on the `trajectories$patient.ID` column.
 
 
 ```R

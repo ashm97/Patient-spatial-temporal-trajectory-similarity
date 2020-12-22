@@ -105,6 +105,13 @@ Brockmann, Dirk, and Helbing, Dirk. 2013. “The hidden geometry of complex, net
 </div>
 
 <div id="ref-myall_2020">
-Myall, Ashleigh C and Peach, Robert L and Weiße, Andrea Y and Davies, Frances and Mookerjee, Siddharth and Holmes, Alison and Barahona, Mauricio. 2020. Network memory in the movement of hospital patients carrying drug-resistant bacteria. arXiv preprint arXiv:2009.14480. https://arxiv.org/abs/2009.14480v2
+Myall, Ashleigh C and Peach, Robert L and Weiße, Andrea Y and Davies, Frances and Mookerjee, Siddharth and Holmes, Alison and Barahona, Mauricio. 2020. Network memory in the movement of hospital patients carrying drug-resistant bacteria. arXiv preprint. https://arxiv.org/abs/2009.14480v2
+
+</div>
+
+</div>
+
+<div id="ref-myall_2020">
+Berry, Tyrus, and Timothy Sauer. 2016. Consistent manifold representation for topological data analysis. arXiv preprint. https://arxiv.org/abs/1606.02353v3
 
 </div>

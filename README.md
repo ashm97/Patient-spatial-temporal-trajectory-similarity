@@ -58,9 +58,7 @@ traj.l <- split(trajectories , f = trajectories$patient.ID)
 
 The function `getSpatialTempProx()` computes total spatial temporal proximities using our kernal function and returns a weighted undirected dataframe of `edges`. For every pair of patients, we define spatio-temporal proximity between ward-time locations $l_{i}$ and $l_{j}$ with the kernel:
 
-```math
-\kappa(l_{i},l_{j})  = e^{-\delta_{ij}-\beta \tau_{ij}},
-```
+![](https://latex.codecogs.com/gif.latex?\kappa(l_{i},l_{j})&space;=&space;e^{-\delta_{ij}-\beta&space;\tau_{ij}},)
 
 where $\tau_{ij}=\begin{vmatrix}t_i - t_j\end{vmatrix}$, parameter $\beta$ represents a propagation speed, and $\delta_{ij}$ denotes the shortest-path 
 distance across `D` (the most probable pathway for disease propagation) between wards. We then measure overall similarity between trajectories $T_m$ and $T_n$ by summing over pairwise proximity measures between $l_i \in T_n$ and $l_j \in T_m$:

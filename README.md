@@ -35,8 +35,7 @@ trajectories = example_trajectories()
 
 traj.l <- split(trajectories , f = trajectories$patient.ID)
 ```
-
-Routes of disease spread are often dominated by a set of most probable trajectories. These probable trajectories can be found by computing a matrix `D` which contains the lengths of shortest paths from nodes v_i -> v_j in terms of effective distance (Brockmann and Helbing 2013). Here we can call the function `eff_dist()` which computes matrix `D` when provided a dataframe containing the weighted directed edges of background mobility patterns.
+Background mobility patterns capture how diseases will spread since individuals and their person-person are a primary vector in transmission. Routes of disease spread are often dominated by a set of most probable trajectories (Brockmann and Helbing 2013). However, as we previously showed heterogeneous structure existed amongst movements patterns (Myall et al. 2020). Probable trajectories then must be derived based on background mobility which captures general movement patterns. Specifically, we capture these most probable trajectories `D` which contains the lengths of shortest paths from nodes v_i -> v_j in terms of effective distance (Brockmann and Helbing 2013). Here we can call the function `eff_dist()` which computes matrix `D` when provided a dataframe containing the weighted directed edges of background mobility patterns.
 
 ```R
 D = eff_dist(read_csv("data/background_movement.csv")) 
@@ -97,17 +96,16 @@ visNetwork(nodes = netDat$nodes,edges = netDat$edges,
 
 <div id="refs" class="references">
 
-<div id="ref-allaire_rmarkdown:_2016">
+<div id="ref-brockmann_2013">
 
-Allaire, J. J., Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang,
-Jeff Allen, Hadley Wickham, and Rob Hyndman. 2016. *Rmarkdown: Dynamic
-Documents for R* (version 1.3).
-<https://cran.r-project.org/web/packages/rmarkdown/index.html>.
+Brockmann, Dirk, and Dirk Helbing. 2013. “The hidden geometry of complex, network-driven contagion phenomena.” science 342.6164 (2013): 1337-1342. https://science.sciencemag.org/content/342/6164/1337
 
 </div>
 
-<div id="ref-brockmann_2013">
+</div>
 
-Brockmann, Dirk, and Dirk Helbing. 2013. “The hidden geometry of complex, network-driven contagion phenomena.” science 342.6164 (2013): 1337-1342. Url: https://science.sciencemag.org/content/342/6164/1337
+<div id="ref-myall_2020">
+
+Myall, A.C., Peach, R.L., Weiße, A.Y., Davies, F., Mookerjee, S., Holmes, A. and Barahona, M., 2020. Network memory in the movement of hospital patients carrying drug-resistant bacteria. arXiv preprint arXiv:2009.14480. https://arxiv.org/abs/2009.14480v2
 
 </div>

@@ -72,11 +72,16 @@ edges = getSpatialTempProx(traj.l,   # list of trajectories
                  beta = 0.6)         # paramter for speed of propergation
 ```
 
-### Graph construction with Continuous k-Nearest Neighbors (CKNN)
+### Graph construction with Continuous *k*-nearest neighbors (Cknn)
+
+Incorporating graph structure between data points can aid classification through the emphasis of strong relationships. Hence, to reveal stronger contacts capturing transmission between patients, we remove weak connections by sparsifying the corresponding fully connected graph made from the `edges` in `getSpatialTempProx()`. 
+
+Although several alternative graph construction methods exist, we focus on Continuous *k*-nearest neighbors (Cknn) an extension to *k*-nearest neighbors (Berry and Timothy 2016). Implemented in the function `cknneighbors_graph`, it takes provide the fully connected `edges`, the paramter `k` for number of nearest neighbors to include, and an optinal paramter `lambda` (set by defaut to `lambda=1` if not provided), and returns a sparsified edges `edges_cknn` according to the Cknn algorithm.
 
 ```R
 edges_cknn = cknneighbors_graph(k=3,             # parameter for k-nearest neighbors
-                                edges = edges)   # edges of graph
+                                #lambda = 1,     # data point density
+                                edges = edges)   # fully connected edges
 ```
 
 

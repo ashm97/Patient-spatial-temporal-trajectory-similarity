@@ -64,7 +64,7 @@ The function `getSpatialTempProx()` computes total spatial temporal proximities 
 where , parameter $\beta$ represents a propagation speed, and $\delta_{ij}$ denotes the shortest-path 
 distance across `D` (the most probable pathway for disease propagation) between wards. We then measure overall similarity between trajectories $T_m$ and $T_n$ by summing over pairwise proximity measures between $l_i \in T_n$ and $l_j \in T_m$:
 
-![formula](https://render.githubusercontent.com/render/math?math=\mathcal{S}(T_n,T_m)=\sum_{l_i\inT_n}\,\sum_{l_j\inT_m}\kappa(l_{i},l_{j}).)
+![formula](https://render.githubusercontent.com/render/math?math=\mathcal{S}(T_n,T_m)=\sum_{l_i \in T_n}\,\sum_{l_j \in T_m} \kappa(l_{i},l_{j}).)
 
 Full description found in *preprint link*
 

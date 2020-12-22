@@ -117,6 +117,6 @@ Myall, Ashleigh C and Peach, Robert L and Weiße, Andrea Y and Davies, Frances a
 </div>
 
 <div id="ref-myall_2020">
-Berry, Tyrus, and Timothy Sauer. 2016. Consistent manifold representation for topological data analysis. arXiv preprint. https://arxiv.org/abs/1606.02353v3
+Berry, Tyrus, and Timothy Sauer. 2016. Consistent manifold representation for topological data analysis. Foundations of Data Science. http://aimsciences.org//article/id/2556e6c9-b4b9-455a-9d9e-886ef0cd166f
 
 </div>

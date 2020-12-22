@@ -45,8 +45,6 @@ source("./R/functions.R")
 ################################################################################
 
 
-# ------------------------------------------------------------------------------
-
 ##
 ##  0. Pre-process data
 ##
@@ -63,51 +61,40 @@ traj.l <- split(trajectories , f = trajectories$patient.ID)
 D = eff_dist(read_csv("data/background_movement.csv")) 
 
 
-# ------------------------------------------------------------------------------
 
 ##
-##  1. Visualise pathway
+##  1. Compute list of similarity  matricies between trajectories
 ##
 
-## 1.1 Visual the pathways with y capturing time and x capturing patients
-p = plot_trajectories(traj.l)
-plot(p)
+edges = getSpatialTempProx(traj.l,   # list of trajectories
+                 D,                  # efffective distance matrix 
+                 beta = 0.6)         # paramter for speed of propergation
 
 
-# ------------------------------------------------------------------------------
 
 ##
-##  2. Compute list of distances matricies between trajectories
+##  2. Sparse graph construction with CKNN
 ##
 
-edges = getSpatialTempProx(traj.l,
-                 D,
-                 beta = 0.6)
+edges_cknn = cknneighbors_graph(k=3,             # parameter for k-nearest neighbors
+                                #lambda = 1,     # data point density
+                                edges = edges)   # fully connected edges
 
-
-
-# ------------------------------------------------------------------------------
 
 ##
-##  3. Sparse graph construction with CKNN
+##  3. Visualisation of network
 ##
 
-edges_cknn = cknneighbors_graph(k=3,
-                                lambda = 1,
-                                edges = edges)
-
-
-# ------------------------------------------------------------------------------
-
-##
-##  4. Visualisation of network
-##
-
-## 4.1 Preprocess data
+## 3.1 Preprocess data
 netDat = preproNet(trajectories,edges_cknn)
 
-## 4.2 Visualise network
-visNetwork(nodes = netDat$nodes,edges = netDat$edges,  
-           height = "500px",width = "100%")%>% 
-  visOptions(highlightNearest = TRUE)
+
+## 3.2 Visualise network
+visNetwork(nodes = netDat$nodes,edges = netDat$edges)%>% 
+  visOptions(highlightNearest = TRUE)%>%
+  visEdges(shadow = TRUE,
+           color = list(color = "lightblue", highlight = "red"))%>% 
+  visGroups(groupname = "B", shape = "icon", 
+            icon = list(code = "f007", color = "red")) %>%
+  addFontAwesome()
 

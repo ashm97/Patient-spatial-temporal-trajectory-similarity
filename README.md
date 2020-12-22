@@ -16,7 +16,7 @@ Here, we propose a graph-based model to mitigate these problems by measuring pro
   <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/methodology_explained.png" width="800">
 </p>
 
-*Model overview. Firstly, patient movement histories are captured as a set of network trajectories $\begin{Bmatrix} T_1,T_2,T_3,...,T_N \end{Bmatrix}$ passing through nodes of a background movement graph $D$ (Panel A). Typically, only direct contact is considered when determine transmission from infected patient movement, however, this inherently missed indirect contact which can also be a source of disease transmission. Our model recovers both indirect and direct contact by measuring points between trajectories in terms of the spatial proximity $\delta_{ij}$ (network-wise) and temporal proximity $\tau_{ij}$ (Panel B). This spatial-temporal proximity allows us to quantifies how close patients have into a mathematical object (a patient trajectory similarity matrix) $S$ (Panel C). Given disease portability of disease transmission increases the longer patients coincide, we recover the contact leading to transmission by forming a contact graph $\hat{S}$ by looking for strongest contact patterns (weighted by proximity) in $S$ (Panel D).*
+<sub>*Model overview. Firstly, patient movement histories are captured as a set of network trajectories $\begin{Bmatrix} T_1,T_2,T_3,...,T_N \end{Bmatrix}$ passing through nodes of a background movement graph $D$ (Panel A). Typically, only direct contact is considered when determine transmission from infected patient movement, however, this inherently missed indirect contact which can also be a source of disease transmission. Our model recovers both indirect and direct contact by measuring points between trajectories in terms of the spatial proximity $\delta_{ij}$ (network-wise) and temporal proximity $\tau_{ij}$ (Panel B). This spatial-temporal proximity allows us to quantifies how close patients have into a mathematical object (a patient trajectory similarity matrix) $S$ (Panel C). Given disease portability of disease transmission increases the longer patients coincide, we recover the contact leading to transmission by forming a contact graph $\hat{S}$ by looking for strongest contact patterns (weighted by proximity) in $S$ (Panel D).*</sub>
 
 In our preprint (link) we showcased our models ability to capture transmission routes in an outbreak of HAI between 116 hospital patients, and demonstrated its real-time deployment on a cohort of 863 hospital patients. Using a semi-supervised learning framework, and bio-markers obtained from Whole Genome Sequencing, we showed that our model reveals missing patient interactions that improve characterisation of disease transmission.
 
@@ -39,8 +39,11 @@ D = eff_dist(read_csv("data/background_movement.csv"))
 
 The dataset `data/background_movement.csv` is a simple example with 12 locations (wards) which the subsequent `trajectories` are recorded over:
 
-![alt text](https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/background_movement_example.png) 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/background_movement_example.png" width="800">
+</p>
 
+<sub>*Network visualisation of example background mobility data*</sub>
 
 The function `example_trajectories()` generates a long dataframe with 12 pre-set trajectories. Each trajectory is a series of locations (rows in the dataframe) with both a location (ward or network nove v_i) and a time component. For later computation, we also split the `trajectories` dataframe into a list of dataframes `traj.l` based on the `trajectories$patient.ID` column.
 

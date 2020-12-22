@@ -108,6 +108,6 @@ Documents for R* (version 1.3).
 
 <div id="ref-brockmann_2013">
 
-Brockmann, Dirk, and Dirk Helbing. 2013. “The hidden geometry of complex, network-driven contagion phenomena.” science 342.6164 (2013): 1337-1342.
+Brockmann, Dirk, and Dirk Helbing. 2013. “The hidden geometry of complex, network-driven contagion phenomena.” science 342.6164 (2013): 1337-1342. Url: https://science.sciencemag.org/content/342/6164/1337
 
 </div>

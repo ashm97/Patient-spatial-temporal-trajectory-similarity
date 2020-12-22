@@ -84,6 +84,12 @@ edges_cknn = cknneighbors_graph(k=3,             # parameter for k-nearest neigh
                                 edges = edges)   # fully connected edges
 ```
 
+For more patients or larger pathways the computation will take increasingly longer
+
+```
+[1] "Computing proximities"
+  |=============================================================================================           |  89%
+```
 
 ### Visualising final contact network
 

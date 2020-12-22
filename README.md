@@ -102,6 +102,10 @@ visNetwork(nodes = netDat$nodes,edges = netDat$edges,
            height = "500px",width = "100%")%>% 
   visOptions(highlightNearest = TRUE)
 ```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/contact_network_vis.png" width="400">
+</p>
+
 
 ## References
 

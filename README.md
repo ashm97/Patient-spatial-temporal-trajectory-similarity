@@ -21,7 +21,7 @@ If used please cite: *preprint link*
 
 ## Repo overview
 
-This repo provides an implementable example of the model proposed in ref. 
+This repo provides an implementable example of the model proposed in ref.  `R/` is the folder for scripts that contain R functions. All functions are documented with [roxygen2](https://roxygen2.r-lib.org/) syntax.
 
 ### Example data
 
@@ -36,12 +36,13 @@ trajectories = example_trajectories()
 traj.l <- split(trajectories , f = trajectories$patient.ID)
 ```
 
-
+Routes of disease spread are often dominated by a set of most probable trajectories. These probable trajectories can be found by computing a matrix `D` which contains the lengths of shortest paths from nodes v_i -> v_j in terms of effective distance. Here we can call the function `eff_dist` which computes matrix `D` when provided a dataframe containing the weighted directed edges of background mobility patterns.
 
 ```R
 D = eff_dist(read_csv("data/background_movement.csv")) 
 ```
 
+The dataset `data/background_movement.csv` here is a simple example with 12 locations (wards) which the `trajectories` are recorded over. 
 
 ### Visualising trajectories
 

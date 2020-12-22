@@ -71,6 +71,12 @@ edges = getSpatialTempProx(traj.l,   # list of trajectories
                  D,                  # efffective distance matrix 
                  beta = 0.6)         # paramter for speed of propergation
 ```
+For more patients or larger pathways the computation will take increasingly longer
+
+```
+[1] "Computing proximities"
+  |=============================================================================================           |  89%
+```
 
 ### Graph construction with Continuous *k*-nearest neighbors (Cknn)
 
@@ -84,12 +90,6 @@ edges_cknn = cknneighbors_graph(k=3,             # parameter for k-nearest neigh
                                 edges = edges)   # fully connected edges
 ```
 
-For more patients or larger pathways the computation will take increasingly longer
-
-```
-[1] "Computing proximities"
-  |=============================================================================================           |  89%
-```
 
 ### Visualising final contact network
 

@@ -27,7 +27,7 @@ This repo provides an implementable example of the model proposed in ref.  `R/` 
 
 There are 2 datasets required for our indirect contact model. Firstly are the trajectories of infected individuals under investigation. Secondly, the background mobility patterns over which indirect contact is measured. 
 
-The function `example_trajectories()` generates a long dataframe with 12 pre-set trajectories. Each trajectory is a series of locations (rows in the dataframe) with both a location (ward) and a time component (the day when the individual was on that ward). For later computation, we also split the `trajectories` dataframe into a list of dataframes `traj.l` based on the `trajectories$patient.ID` column.
+The function `example_trajectories()` generates a long dataframe with 12 pre-set trajectories. Each trajectory is a series of locations (rows in the dataframe) with both a location (ward or network nove v_i) and a time component. For later computation, we also split the `trajectories` dataframe into a list of dataframes `traj.l` based on the `trajectories$patient.ID` column.
 
 
 ```R
@@ -42,15 +42,30 @@ Routes of disease spread are often dominated by a set of most probable trajector
 D = eff_dist(read_csv("data/background_movement.csv")) 
 ```
 
-The dataset `data/background_movement.csv` here is a simple example with 12 locations (wards) which the `trajectories` are recorded over. 
+The dataset `data/background_movement.csv` is a simple example with 12 locations (wards) which the `trajectories` are recorded over. 
 
 ### Visualising trajectories
+
+We provide a function `plot_trajectories` to visualise the time that `trajectories` were recorded in `data/background_movement.csv`.
 
 ```R
 plot_trajectories(traj.l)
 ```
 
+*Trajectory summary. Each row refers to one individual (patient), and x-axis records time. The line plot shows the beggining of each trajectory (green marker), and the finishing time (red marker).*
+
 ### Computing proximity between trajectories
+
+The function `getSpatialTempProx` computes total spatial temporal proximities using our kernal function and returns a weighted undirected dataframe of `edges`. For every pair of patients, we define spatio-temporal proximity between ward-time locations $l_{i}$ and $l_{j}$ with the kernel:
+
+\kappa(l_{i},l_{j})  = e^{-\delta_{ij}-\beta \tau_{ij}},
+
+where $\tau_{ij}=\begin{vmatrix}t_i - t_j\end{vmatrix}$, parameter $\beta$ represents a propagation speed, and $\delta_{ij}$ denotes the shortest-path 
+distance across `D` (the most probable pathway for disease propagation) between wards. We then measure overall similarity between trajectories $T_m$ and $T_n$ by summing over pairwise proximity measures between $l_i \in T_n$ and $l_j \in T_m$:
+
+\mathcal{S}(T_n,T_m) =  \sum_{l_i \in T_n} \, \sum_{l_j \in T_m} \kappa(l_{i},l_{j}).
+
+Full description found in *preprint link*
 
 ```R
 edges = getSpatialTempProx(traj.l,   # list of trajectories

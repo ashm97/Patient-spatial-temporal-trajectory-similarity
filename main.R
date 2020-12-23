@@ -63,7 +63,7 @@ D = eff_dist(read_csv("data/background_movement.csv"))
 
 
 ##
-##  1. Compute list of similarity  matricies between trajectories
+##  1. Compute proximity between all trajectories
 ##
 
 edges = getSpatialTempProx(traj.l,   # list of trajectories

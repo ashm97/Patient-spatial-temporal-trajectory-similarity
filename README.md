@@ -98,9 +98,7 @@ edges_cknn = cknneighbors_graph(k=3,             # parameter for k-nearest neigh
 netDat = preproNet(trajectories,edges_cknn)
 
 # Visualise network
-visNetwork(nodes = netDat$nodes,edges = netDat$edges,  
-           height = "500px",width = "100%")%>% 
-  visOptions(highlightNearest = TRUE)
+visNetwork(nodes = netDat$nodes,edges = netDat$edges)
 ```
 <p align="center">
   <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/contact_network_vis.png" width="600">

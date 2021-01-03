@@ -1,4 +1,4 @@
-# Revealing missed transmission in hospital outbreaks of disease with a novel contact recovery mode
+# Revealing missed transmission of infectious disease with contact mediated by background flows
 
 ## Paper overview
 

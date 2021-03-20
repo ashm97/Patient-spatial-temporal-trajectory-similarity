@@ -8,8 +8,9 @@
 ##
 ## Date Created: 21-12-2020
 ##
-## Copyright (c) Ashleigh C. Myall 2020
+## Copyright (c) 2020-2021 Ashleigh C. Myall
 ## Email: a.myall19@imperial.ac.uk
+## Licensed under the GNU General Public License v3.0
 ##
 ## ---------------------------
 ##
@@ -32,14 +33,13 @@ library(visNetwork)
 library(readr)
 library(igraph)
 library(e1071)
-
-source("./R/functions.R")
+library(StEP)
 
 
 ################################################################################
 
 ##########
-##########                       Main Work Flow 
+##########                       Main Work Flow
 ##########
 
 ################################################################################
@@ -56,9 +56,9 @@ trajectories = example_trajectories()
 ## 0.2 Split long data into a list, with each list element a single patient dataframe
 traj.l <- split(trajectories , f = trajectories$patient.ID)
 
-## 0.3 Convert background movement graph to effective distances matrix D, containing 
+## 0.3 Convert background movement graph to effective distances matrix D, containing
 # shortest directed path between nodes i -> j.
-D = eff_dist(read_csv("data/background_movement.csv")) 
+D = eff_dist(read_csv("movements.csv"))
 
 
 
@@ -67,7 +67,7 @@ D = eff_dist(read_csv("data/background_movement.csv"))
 ##
 
 edges = getSpatialTempProx(traj.l,   # list of trajectories
-                 D,                  # efffective distance matrix 
+                 D,                  # efffective distance matrix
                  beta = 0.6)         # paramter for speed of propergation
 
 
@@ -90,11 +90,11 @@ netDat = preproNet(trajectories,edges_cknn)
 
 
 ## 3.2 Visualise network
-visNetwork(nodes = netDat$nodes,edges = netDat$edges)%>% 
+visNetwork(nodes = netDat$nodes,edges = netDat$edges)%>%
   visOptions(highlightNearest = TRUE)%>%
   visEdges(shadow = TRUE,
-           color = list(color = "lightblue", highlight = "red"))%>% 
-  visGroups(groupname = "B", shape = "icon", 
+           color = list(color = "lightblue", highlight = "red"))%>%
+  visGroups(groupname = "B", shape = "icon",
             icon = list(code = "f007", color = "red")) %>%
   addFontAwesome()
 

@@ -5,7 +5,7 @@
 We introduce a novel contact model which recovers undetected transmission of healthcare-associated infections (HAIs). Outbreaks of HAIs are both burdensome and extremely common. Contact tracing based on direct contacts is often used in outbreaks HAIs to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/fig_intro_missing_data.png" width="400">
+  <img src="images/fig_intro_missing_data.png" width="400">
 </p>
 
 <sub>*Traditional contact tracing based on direct contact, a widely used tool in disease outbreak investigations, can be hampered by missing data. Both non-observable contacts between infected patients, or unknown infected patients serving as links between infected patients can result in misleading and limited results. Moreover, transmission facilitated through environmental surfaces, or by staff can all form an abundance of indirect and non-observable links.*</sub>
@@ -13,7 +13,7 @@ We introduce a novel contact model which recovers undetected transmission of hea
 Here, we propose a graph-based model to mitigate these problems by measuring proximity between network-constrained temporal trajectories across background movement patterns. Our model naturally captures already known, but also missed contact likely to have resulted in transmission. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/methodology_explained.png" width="800">
+  <img src="images/methodology_explained.png" width="800">
 </p>
 
 <sub>*Model overview. Firstly, patient movement histories are captured as a set of network trajectories $\begin{Bmatrix} T_1,T_2,T_3,...,T_N \end{Bmatrix}$ passing through nodes of a background movement graph $D$ (Panel A). Typically, only direct contact is considered when determine transmission from infected patient movement, however, this inherently missed indirect contact which can also be a source of disease transmission. Our model recovers both indirect and direct contact by measuring points between trajectories in terms of the spatial proximity $\delta_{ij}$ (network-wise) and temporal proximity $\tau_{ij}$ (Panel B). This spatial-temporal proximity allows us to quantifies how close patients have into a mathematical object (a patient trajectory similarity matrix) $S$ (Panel C). Given disease portability of disease transmission increases the longer patients coincide, we recover the contact leading to transmission by forming a contact graph $\hat{S}$ by looking for strongest contact patterns (weighted by proximity) in $S$ (Panel D).*</sub>
@@ -40,8 +40,9 @@ D = eff_dist(read_csv("data/background_movement.csv"))
 The dataset `data/background_movement.csv` is a simple example with 12 locations (wards) which the subsequent `trajectories` are recorded over:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/background_movement_example.png" width="400">
+  <img src="images/background_movement_example.png" width="400">
 </p>
+
 
 <sub>*Network visualisation of example background mobility data*</sub>
 
@@ -101,8 +102,9 @@ netDat = preproNet(trajectories,edges_cknn)
 visNetwork(nodes = netDat$nodes,edges = netDat$edges)
 ```
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ashm97/Patient-spatial-temporal-trajectory-similarity/main/images/contact_network_vis.png" width="600">
+  <img src="images/contact_network_vis.png" width="600">
 </p>
+
 
 
 ## References
@@ -117,14 +119,14 @@ Brockmann, Dirk, and Helbing, Dirk. 2013. “The hidden geometry of complex, net
 
 
 <div id="ref-myall_2020">
-  
+
 Myall, Ashleigh and Peach, Robert and Weiße, Andrea and Davies, Frances and Mookerjee, Siddharth and Holmes, Alison and Barahona, Mauricio. 2020. Network memory in the movement of hospital patients carrying drug-resistant bacteria. arXiv preprint. https://arxiv.org/abs/2009.14480v2
 
 </div>
 
 
 <div id="ref-myall_2020">
-  
+
 Berry, Tyrus, and Timothy Sauer. 2016. Consistent manifold representation for topological data analysis. Foundations of Data Science. http://aimsciences.org//article/id/2556e6c9-b4b9-455a-9d9e-886ef0cd166f
 
 </div>

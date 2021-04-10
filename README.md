@@ -2,7 +2,8 @@
 
 ## Paper overview
 
-We introduce a novel contact model which recovers undetected transmission of healthcare-associated infections (HAIs). Outbreaks of HAIs are both burdensome and extremely common. Contact tracing based on direct contacts is often used in outbreaks HAIs to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
+We introduce a novel contact model which recovers undetected transmission of infectious disease (https://doi.org/10.1101/2021.04.07.21254497
+). Outbreaks of disease are both burdensome and extremely common. Contact tracing based on direct contacts is often used in outbreaks HAIs to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
 
 <p align="center">
   <img src="images/fig_intro_missing_data.png" width="400">

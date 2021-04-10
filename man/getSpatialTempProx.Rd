@@ -17,7 +17,7 @@ proximity. beta can also be intepreted as speed of proporgation across the
 background mobility data. To pass when for the spatial temporal proximity kernal (matrix computation).}
 }
 \value{
-weighted edge list of similarities between trajectories.
+A weighted-edge list of similarities between trajectories.
 }
 \description{
 Given the total set of trajectories, compute proxmity between all combinations.

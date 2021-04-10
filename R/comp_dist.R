@@ -1,6 +1,6 @@
 #' @title Compute space and time distance matricies
 #'
-#' @descript Given two trajectories of length m and n respectively, form 2 m x n matricies
+#' @description Given two trajectories of length m and n respectively, form 2 m x n matricies
 #' corresponding to trajectory locations. One matrix dist_spatial, confers to
 #' distance across a background movement graph, and another matrix dist_temporal
 #' is the temporal distance between trajectory locations.
@@ -10,7 +10,7 @@
 #' @param D matrix: effective distance matrix, with elements the shortest path effective
 #' distance weight between nodes i and j
 #'
-#' @return list of ditance matricies
+#' @return A list of ditance matricies
 #' @export
 #' @author Ashleigh C. Myall (\email{a.myall19@@imperial.ac.uk})
 #  Copyright (C) 2020-2021 Ashleigh C. Myall

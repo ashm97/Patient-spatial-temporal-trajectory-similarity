@@ -1,25 +1,27 @@
 #' @title Spatial temporal proximity kernal (matrix computation)
 #'
-#' @description Computes total spatial temporal proximities using the kernal. For every pair
-#' of patients, we define spatio-temporal proximity between ward-time locations
-#' $l_{i}$ and $l_{j}$ with the kernel:
+#' @description Computes total spatial temporal proximities using the kernal.
 #'
-#' \kappa(l_{i},l_{j})  = e^{-\delta_{ij}-\beta \tau_{ij}},
+#' @section Details:
+#' For every pair of patients, we define spatio-temporal proximity between ward-time locations
+#' \eqn{l_{i}} and \eqn{l_{j}} with the kernel:
 #'
-#' where $\tau_{ij}=\begin{vmatrix}t_i - t_j\end{vmatrix}$, parameter $\beta$
-#' represents a propagation speed, and $\delta_{ij}$ denotes the shortest-path
+#' \deqn{\kappa(l_{i},l_{j})  = e^{-\delta_{ij}-\beta \tau_{ij}}}
+#'
+#' where \eqn{tau_{ij}=\begin{vmatrix}t_i - t_j\end{vmatrix}}, parameter \eqn{\beta}
+#' represents a propagation speed, and \eqn{\delta_{ij}} denotes the shortest-path
 #' distance (the most probable pathway for disease propagation) between wards
-#' $v_i$ and $v_j$ across the background movement network $G$.
+#' \eqn{v_i} and \eqn{v_j} across the background movement network \eqn{G}.
 #' Note the equation reaches a maximum of one when
-#' $l_{ia} = l_{jb}$ (exact overlaps), and decays to zero as spatial-temporal
+#' \eqn{l_{ia} = l_{jb}} (exact overlaps), and decays to zero as spatial-temporal
 #' proximity becomes more distant. We then measure overall similarity between
-#' trajectories $T_m$ and $T_n$ by summing over pairwise proximity measures
-#' between $l_i \in T_n$ and $l_j \in T_m$:
+#' trajectories \eqn{T_m} and \eqn{T_n} by summing over pairwise proximity measures
+#' between \eqn{l_i \in T_n$ and $l_j \in T_m}:
 #'
-#' \mathcal{S}(T_n,T_m) =  \sum_{l_i \in T_n} \, \sum_{l_j \in T_m} \kappa(l_{i},l_{j}).
+#' \deqn{S(T_n,T_m) =  \sum_{l_i \in T_n}\sum_{l_j \in T_m}\kappa(l_{i},l_{j})}
 #'
-#'
-#' Full description found in XXXX LINK PAPER XXXXX
+#' A full description can be found in our paper: \url{https://doi.org/10.1101/2021.04.07.21254497}
+#' about this package.
 #'
 #' @param beta double: paramter regulating the effect of time in spatial-temporal
 #' proximity. beta can also be intepreted as speed of proporgation across the
@@ -29,7 +31,7 @@
 #' @param time_d matrix: pairwise time distances between locations of
 #' two trajectories.
 #'
-#' @return sum of spatial-temporal proximities
+#' @return Sum of spatial-temporal proximities
 #' @export
 #' @author Ashleigh C. Myall (\email{a.myall19@@imperial.ac.uk})
 #  Copyright (C) 2020-2021 Ashleigh C. Myall

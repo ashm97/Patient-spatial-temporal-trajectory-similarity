@@ -13,10 +13,13 @@ comp_dist(traj_a, traj_b, D)
 distance weight between nodes i and j}
 }
 \value{
-list of ditance matricies
+A list of ditance matricies
 }
 \description{
-Compute space and time distance matricies
+Given two trajectories of length m and n respectively, form 2 m x n matricies
+corresponding to trajectory locations. One matrix dist_spatial, confers to
+distance across a background movement graph, and another matrix dist_temporal
+is the temporal distance between trajectory locations.
 }
 \author{
 Ashleigh C. Myall (\email{a.myall19@imperial.ac.uk})

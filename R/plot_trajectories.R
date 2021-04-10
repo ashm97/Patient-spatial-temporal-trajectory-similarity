@@ -1,10 +1,10 @@
 #' @title Plot pathways function
 #'
-#' @description Build ggplot visualisation for time components of trajectories
+#' @description Build ggplot visualisation for time components of trajectories.
 #'
-#' @param traj.l List: list of trajectory dataframes
+#' @param traj.l A list of trajectory dataframes
 #'
-#' @return GGplot visulisation
+#' @return A ggplot object for visualisation
 #'
 #' @export
 #'

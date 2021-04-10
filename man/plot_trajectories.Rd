@@ -7,13 +7,13 @@
 plot_trajectories(traj.l)
 }
 \arguments{
-\item{traj.l}{List: list of trajectory dataframes}
+\item{traj.l}{A list of trajectory dataframes}
 }
 \value{
-GGplot visulisation
+A ggplot object for visualisation
 }
 \description{
-Build ggplot visualisation for time components of trajectories
+Build ggplot visualisation for time components of trajectories.
 }
 \author{
 Ashleigh C. Myall (\email{a.myall19@imperial.ac.uk})

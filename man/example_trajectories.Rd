@@ -7,7 +7,7 @@
 example_trajectories()
 }
 \value{
-Dataframe in long format with each row contiang the unique location-time
+A dataframe in long format with each row contiang the unique location-time
 positions of each trajectory
 }
 \description{

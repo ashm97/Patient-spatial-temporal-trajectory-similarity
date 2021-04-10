@@ -2,7 +2,7 @@
 
 ## Paper overview
 
-We introduce a novel contact model which recovers undetected transmission of infectious disease. Outbreaks of disease are both burdensome and extremely common. Contact tracing based on direct contacts is often used in outbreaks HAIs to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
+We introduce a novel contact model which recovers undetected transmission of infectious disease (*Myall et. al 2021*). Outbreaks of disease are both burdensome and extremely common. Contact tracing based on direct contacts is often used in outbreaks HAIs to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
 
 <p align="center">
   <img src="images/fig_intro_missing_data.png" width="400">
@@ -23,13 +23,13 @@ In our preprint (*Myall et. al 2021*) we showcased StEP's ability to capture tra
 
 ## Repo overview
 
-This repo provides an implementable example of the model proposed in Myall et al. 2021.  `R/` is the folder for scripts that contain R functions. All functions are documented with [roxygen2](https://roxygen2.r-lib.org/) syntax.
+This repo provides an implementable example of the model proposed in *Myall et al. 2021.*  `R/` is the folder for scripts that contain R functions. All functions are documented with [roxygen2](https://roxygen2.r-lib.org/) syntax.
 
 ### Example data
 
 There are 2 datasets required for StEP. Firstly, is the total mobility patterns over which spatial-temporal contact is measured. Secondly are the trajectories of infected individuals under investigation.
 
-Total mobility patterns capture how diseases will spread since individuals and their person-person are a primary vector in transmission. Routes of disease spread are often dominated by a set of most probable trajectories (Brockmann and Helbing 2013). However, as we previously showed, heterogeneous structure existed amongst movements patterns (Myall et al. 2020). Probable trajectories then must be derived based on mobility which captures general patterns of movement. Specifically, we capture these most probable trajectories, `D`, which contains the shortest paths from nodes v_i -> v_j in terms of effective distance (Brockmann and Helbing 2013). Here we can call the function `eff_dist()`, which computes matrix `D` when provided a data frame containing the weighted directed edges of background mobility patterns.
+Total mobility patterns capture how diseases will spread since individuals and their person-person are a primary vector in transmission. Routes of disease spread are often dominated by a set of most probable trajectories (*Brockmann and Helbing 2013*). However, as we previously showed, heterogeneous structure existed amongst movements patterns (*Myall et al. 2020*). Probable trajectories then must be derived based on mobility which captures general patterns of movement. Specifically, we capture these most probable trajectories, `D`, which contains the shortest paths from nodes v_i -> v_j in terms of effective distance (Brockmann and Helbing 2013). Here we can call the function `eff_dist()`, which computes matrix `D` when provided a data frame containing the weighted directed edges of background mobility patterns.
 
 ```R
 D = eff_dist(read_csv("data/background_movement.csv")) 
@@ -63,7 +63,7 @@ where $\tau_{ij}=\begin{vmatrix}t_i - t_j\end{vmatrix}$, parameter $\beta$ repre
 
 \mathcal{S}(T_n,T_m)=\sum_{l_i \in T_n}\,\sum_{l_j \in T_m} \kappa(l_{i},l_{j}).
 
-Full description found in *preprint link*
+Full description found in *Myall et al. 2021.*
 
 ```R
 edges = getSpatialTempProx(traj.l,   # list of trajectories

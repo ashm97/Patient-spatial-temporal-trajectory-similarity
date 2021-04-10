@@ -1,7 +1,7 @@
 Package: StEP
 Type: Package
 Title: Revealing missed transmission of infectious disease with contact mediated by movements
-Version: 0.0.1
+Version: 0.1.0
 Author: Ashleigh C. Myall
 Maintainer: Ashleigh C. Myall <a.myall19@imperial.ac.uk>
 Description: an R package implementing a novel contact model which recovers undetected transmission of healthcare-associated infections

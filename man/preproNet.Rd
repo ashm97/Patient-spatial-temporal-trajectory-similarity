@@ -2,7 +2,7 @@
 % Please edit documentation in R/preproNet.R
 \name{preproNet}
 \alias{preproNet}
-\title{Preprocess data for nodes and edges}
+\title{Preprocess data for creating nodes and edges}
 \usage{
 preproNet(trajectories, edges)
 }
@@ -13,10 +13,10 @@ preproNet(trajectories, edges)
 trajectories.}
 }
 \value{
-list: list of nodes and edges for visualisation.
+list: A list of nodes and edges for visualisation.
 }
 \description{
-Preprocess data for nodes and edges
+A function creating nodes and edges from input trajectory data.
 }
 \author{
 Ashleigh C. Myall (\email{a.myall19@imperial.ac.uk})

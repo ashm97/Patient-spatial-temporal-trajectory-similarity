@@ -1,10 +1,12 @@
-#' @title Preprocess data for nodes and edges
+#' @title Preprocess data for creating nodes and edges
+#'
+#' @description A function creating nodes and edges from input trajectory data.
 #'
 #' @param trajectories dataframe: full trajectory dataframe (long format)
 #' @param edges dataframe: weighted undirected edge list for similarity between
 #' trajectories.
 #'
-#' @return list: list of nodes and edges for visualisation.
+#' @return list: A list of nodes and edges for visualisation.
 #' @export
 #' @author Ashleigh C. Myall (\email{a.myall19@@imperial.ac.uk})
 #  Copyright (C) 2020-2021 Ashleigh C. Myall

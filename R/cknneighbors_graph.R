@@ -1,18 +1,14 @@
-#' @title Implementation of of Continuous k-Nearest Neighbors (CKNN) in R
+#' @title Implementation of of Continuous k-Nearest Neighbors (CKNNs) in R
 #'
-#' @description See https://arxiv.org/pdf/1606.02353.pdf. CKNN connect points x,y
-#'
-#' if d(x,y) < lambda * ( d(x,x_k) * d(y,y_k) )^0.5
-#'
-#' Where d(x,y) is the distance between points x and y. And x_k, and y_k, are the
-#' k-th closest neighbors of points x and y respectively.
+#' @description CKNNs connect points x,y if \eqn{d(x,y) < lambda * (d(x,x_k) * d(y,y_k))^0.5}, where \eqn{d(x,y)} is the distance between points x and y, and variables \eqn{x_k} and \eqn{y_k}
+#' are the k-th closest neighbors of points x and y, respectively. See \url{https://arxiv.org/pdf/1606.02353.pdf} for details.
 #'
 #' @param k integer: number of neighbors
 #' @param lambda double: positive parameter regulating density.
 #' @param edges dataframe: weighted undirected edge list for similarity between
 #' trajectories.
 #'
-#' @return dataframe of edges with CKNN selected edges only.
+#' @return A dataframe of edges with CKNNs selected edges only.
 #' @export
 #' @author Ashleigh C. Myall (\email{a.myall19@@imperial.ac.uk})
 #  Copyright (C) 2020-2021 Ashleigh C. Myall

@@ -9,7 +9,7 @@
 #' proximity. beta can also be intepreted as speed of proporgation across the
 #' background mobility data. To pass when for the spatial temporal proximity kernal (matrix computation).
 #'
-#' @return weighted edge list of similarities between trajectories.
+#' @return A weighted-edge list of similarities between trajectories.
 #' @export
 #' @author Ashleigh C. Myall (\email{a.myall19@@imperial.ac.uk})
 #  Copyright (C) 2020-2021 Ashleigh C. Myall

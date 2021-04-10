@@ -2,7 +2,7 @@
 % Please edit documentation in R/cknneighbors_graph.R
 \name{cknneighbors_graph}
 \alias{cknneighbors_graph}
-\title{Implementation of of Continuous k-Nearest Neighbors (CKNN) in R}
+\title{Implementation of of Continuous k-Nearest Neighbors (CKNNs) in R}
 \usage{
 cknneighbors_graph(k = 2, lambda = 1, edges)
 }
@@ -15,15 +15,11 @@ cknneighbors_graph(k = 2, lambda = 1, edges)
 trajectories.}
 }
 \value{
-dataframe of edges with CKNN selected edges only.
+A dataframe of edges with CKNNs selected edges only.
 }
 \description{
-See https://arxiv.org/pdf/1606.02353.pdf. CKNN connect points x,y
-
-if d(x,y) < lambda * ( d(x,x_k) * d(y,y_k) )^0.5
-
-Where d(x,y) is the distance between points x and y. And x_k, and y_k, are the
-k-th closest neighbors of points x and y respectively.
+CKNNs connect points x,y if \eqn{d(x,y) < lambda * (d(x,x_k) * d(y,y_k))^0.5}, where \eqn{d(x,y)} is the distance between points x and y, and variables \eqn{x_k} and \eqn{y_k}
+are the k-th closest neighbors of points x and y, respectively. See \url{https://arxiv.org/pdf/1606.02353.pdf} for details.
 }
 \author{
 Ashleigh C. Myall (\email{a.myall19@imperial.ac.uk})

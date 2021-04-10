@@ -2,7 +2,11 @@
 
 ## Paper overview
 
-We introduce a novel contact model which recovers undetected transmission of infectious disease (*Myall et. al 2021*). Outbreaks of disease are both burdensome and extremely common. Contact tracing based on direct contacts is often used in disease outbreaks to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
+**Citation**
+
+Myall, A. C., Peach, R. L., Wan, Y., Mookerjee, S., Jauneikaite, E., Bolt, F., Price, J. R., Davies, F., Wiesse, A. Y., Holmes, A., & Barahona, M. (2021). Characterising contact in disease outbreaks via a network model of spatial-temporal proximity. *MedRxiv*, 2021.04.07.21254497. https://doi.org/10.1101/2021.04.07.21254497.
+
+In this article, we introduce a novel contact model which recovers undetected transmission of infectious disease. Outbreaks of disease are both burdensome and extremely common. Contact tracing based on direct contacts is often used in disease outbreaks to prevent further spread. However, missing and indirect contacts pose severely limit contact tracing and result in misleading conclusions. 
 
 <p align="center">
   <img src="images/fig_intro_missing_data.png" width="400">
@@ -18,7 +22,7 @@ Here, we propose a Spatial-temporal Epidemiological Proximity (StEP) model, base
 
 <sub>*Model overview. Firstly, patient movement histories are captured as a set of network trajectories passing through nodes of a background movement graph D (Panel A). Typically, only direct contact is considered when determine transmission from infected patient movement, however, this inherently missed indirect contact which can also be a source of disease transmission. Our model recovers both indirect and direct contact by measuring points between trajectories in terms of the spatial proximity delta (network-wise) and temporal proximity tau (Panel B). This spatial-temporal proximity allows us to quantifies how close patients have into a mathematical object (a patient trajectory similarity matrix) S (Panel C). Given disease portability of disease transmission increases the longer patients coincide, we recover the contact leading to transmission by forming a contact graph S hat by looking for strongest contact patterns (weighted by proximity) in S (Panel D).*</sub>
 
-In our preprint (*Myall et. al 2021*) we showcased StEP's ability to capture transmission routes in outbreaks of healthcare-acquired infections between hospital patients and demonstrated its efficacy with a partnered genomic analysis. Using a semi-supervised learning framework and bio-markers obtained from Whole Genome Sequencing, we showed that our model reveals missing patient interactions that improve disease transmission characterisation.
+In our preprint (*Myall et. al 2021*), we showcased StEP's ability to capture transmission routes in outbreaks of healthcare-acquired infections between hospital patients and demonstrated its efficacy with a partnered genomic analysis. Using a semi-supervised learning framework and bio-markers obtained from Whole Genome Sequencing, we showed that our model reveals missing patient interactions that improve disease transmission characterisation.
 
 
 ## Repo overview

@@ -3,7 +3,7 @@
 #' @description A pre-built function with no arguements to return example trajectories. Each trajectory
 #' contains a location (ward), and a corresponding time (date) on that location.
 #'
-#' @return Dataframe in long format with each row contiang the unique location-time
+#' @return A dataframe in long format with each row contiang the unique location-time
 #' positions of each trajectory
 #'
 #' @export
